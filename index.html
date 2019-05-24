@@ -25,32 +25,46 @@
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper" class="">
-      <div class="sidebar-heading bg-info">Tech Library</div>
-      <!-- <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action">Shortcuts</a>
-        <a href="#" class="list-group-item list-group-item-action">Overview</a>
-        <a href="#" class="list-group-item list-group-item-action">Events</a>
-        <a href="#" class="list-group-item list-group-item-action">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action">Status</a>
-      </div> -->
+      <div class="sidebar-heading bg-info">
+        <a href="#" class="text-white font-weight-bold text-decoration-none">
+          <i class="material-icons align-middle mr-2">developer_board</i>Tech Library</div>
+        </a>
+      <div class="sidebar-user">
+        <!-- <img src="" alt="avatars" class="img-fluid rounded-circle"> -->
+        <i class="material-icons img-fluid rounded-circle" style="font-size:50px;">account_circle</i>
+        <div class="user-name font-weight-bold">
+          홍삼골드
+        </div>
+        <small class="user-server">T109</small>
+      </div>
       <ul class="list-group">
-        <li class="nav-item">
-          <a class="list-group-item list-group-item-action" href="#"><i class="material-icons align-middle mr-2">dashboard</i>Dashboard</a>
+        <li class="sidebar-header list-group-item">Main</li>
+        <li class="sidebar-item">
+          <a class="list-group-item list-group-item-action" href="#"><i class="material-icons align-middle mb-1 mr-2">dashboard</i>Dashboard</a>
         </li>
-        <li class="nav-item">
-          <a class="list-group-item list-group-item-action" href="#">Shortcuts</a>
+        <li class="sidebar-item">
+          <a class="list-group-item list-group-item-action collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1" href="#">Shortcuts</a>
+          <ul class="list-group sidebar-dropdown collapse" id="collapse1" data-parent="#sidebar-wrapper">
+            <li class="sidebar-item"><a class="list-group-item list-group-item-action" href="#">Left Sidebar</a></li>
+            <li class="sidebar-item"><a class="list-group-item list-group-item-action" href="#">Right Sidebar</a></li>
+          </ul>
         </li>
-        <li class="">
+        <li class="sidebar-item">
+          <a class="list-group-item list-group-item-action collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2" href="#">Overview</a>
+          <ul class="list-group sidebar-dropdown collapse" id="collapse2" data-parent="#sidebar-wrapper">
+            <li class="sidebar-item"><a class="list-group-item list-group-item-action" href="#">Overview Child</a></li>
+          </ul>
+        </li>
+        <li class="sidebar-item">
           <a class="list-group-item list-group-item-action" href="#">Overview</a>
         </li>
-        <li class="">
+        <li class="sidebar-item">
           <a class="list-group-item list-group-item-action" href="#">Events</a>
         </li>
-        <li class="">
+        <li class="sidebar-item">
           <a class="list-group-item list-group-item-action" href="#">Profile</a>
         </li>
-        <li class="">
+        <li class="sidebar-item">
           <a class="list-group-item list-group-item-action" href="#">Status</a>
         </li>
       </ul>
@@ -61,8 +75,15 @@
     <!-- Page Content -->
     <div id="page-content-wrapper" class="bg-light">
 
-      <nav class="navbar navbar-expand-lg navbar-light border-bottom bg-info">
-        <i id="menu-toggle" class="material-icons text-light">menu</i>
+      <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <i id="menu-left-toggle" class="material-icons menu-left">menu</i>
+        <!-- <div class="menu-wrapper">
+          <div class="menu-left" id="menu-left-toggle">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+        </div> -->
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -109,10 +130,12 @@
 
   <!-- Menu Toggle Script -->
   <script>
-    $("#menu-toggle").click(function(e) {
+    $("#menu-left-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
+      $(this).toggleClass("active");
     });
+
   </script>
 
 </body>
